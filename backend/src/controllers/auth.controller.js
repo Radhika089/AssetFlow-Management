@@ -36,11 +36,16 @@ export async function registerUser(req, res) {
     res.cookie("token", token);
 
     res.status(201).json({
-      success: true,
-      message: "Registered Successfully!",
-      user: { _id: user.id, name: user.name, email: user.email },
-      token,
-    });
+    success: true,
+    message: "Registered Successfully!",
+    user: {
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    },
+    token,
+  });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
@@ -83,11 +88,16 @@ export async function loginUser(req, res) {
     res.cookie("token", token);
 
     res.status(200).json({
-      success: true,
-      message: "Login Successfully!",
-      user: { _id: user.id, name: user.name, email: user.email },
-      token,
-    });
+    success: true,
+    message: "Login Successfully!",
+    user: {
+      _id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+    },
+    token,
+  });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
