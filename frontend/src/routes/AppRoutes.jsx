@@ -1,11 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "../layouts/Layout";
-import Dashboard from "../pages/Dashboard/Dashboard";
+import Layout from "../layouts/layout";
+import Dashboard from "../pages/Dashboard/dashboard";
 import Departments from "../pages/organisationSetup/Departments";
 import AssetsPage from "../pages/Assets/AssetsPage";
-
-// import Login from "../pages/auth/Login";
-// import Signup from "../pages/auth/Signup";
+import Login from "../pages/auth/Login";
+import Signup from "../pages/auth/Signup";
 
 export default function AppRoutes() {
   return (
