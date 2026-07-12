@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
+//import Login from "./pages/auth/Login";
+//import Signup from "./pages/auth/Signup";
 
 import DashboardPage from "./pages/Dashboard/dashboardPage";
 
@@ -13,11 +13,11 @@ function App() {
     <Routes>
 
       {/* Authentication Routes */}
-      <Route path="/" element={<Signup />} />
+      {/* <Route path="/" element={<Signup />} />
 
       <Route path="/signup" element={<Signup />} />
 
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} /> */}
 
 
       {/* Dashboard Route */}
