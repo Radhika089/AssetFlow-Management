@@ -7,6 +7,7 @@ import categoryRouter from "./routes/assetCategory.route.js";
 import assetRouter from "./routes/asset.route.js";
 import allocationRouter from "./routes/allocation.route.js";
 import maintenanceRouter from "./routes/maintenance.route.js";
+import dashboardRouter from "./routes/dashboard.route.js";
 
 const app = express();
 
@@ -26,5 +27,6 @@ app.use("/api/category", categoryRouter);
 app.use("/api/assets", assetRouter);
 app.use("/api/allocation", allocationRouter);
 app.use("/api/maintenance", maintenanceRouter);
+app.use("/api/dashboard", dashboardRouter);
 
 export default app;
