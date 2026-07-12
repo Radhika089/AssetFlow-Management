@@ -6,14 +6,25 @@ import {
   markAsRead,
 } from "../controllers/notification.controller.js";
 
-import authMiddleware from "../middlewares/auth.middleware.js";
+import { authorizeRoles } from "../middleware/role.middleware.js";
+import { authMiddleware } from "../middleware/auth.middleware.js";
 
 const notificationRouter = express.Router();
 
-notificationRouter.post("/", authMiddleware, createNotification);
+notificationRouter.post(
+  "/",
+  authMiddleware,
+  authorizeRoles,
+  createNotification,
+);
 
-notificationRouter.get("/", authMiddleware, getNotifications);
+notificationRouter.get("/", authMiddleware, authorizeRoles, getNotifications);
 
-notificationRouter.patch("/:id/read", authMiddleware, markAsRead);
+notificationRouter.patch(
+  "/:id/read",
+  authMiddleware,
+  authorizeRoles,
+  markAsRead,
+);
 
 export default notificationRouter;
