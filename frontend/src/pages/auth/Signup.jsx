@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { registerUser } from "../../services/authService";
 import "./Auth.css";
 
 const Signup = () => {
@@ -23,22 +24,36 @@ const Signup = () => {
   };
 
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
+ const handleSubmit = async(e)=>{
 
-    if(!formData.name || !formData.email || !formData.password){
-      alert("Please fill all fields");
-      return;
-    }
+e.preventDefault();
 
 
-    console.log(formData);
+try{
 
-    alert("Account created successfully");
+const response = await registerUser(formData);
 
-    navigate("/login");
 
-  };
+console.log(response.data);
+
+
+alert("Account created successfully");
+
+
+navigate("/login");
+
+
+}
+catch (error) {
+  console.log("Error:", error);
+  console.log("Response:", error.response);
+  console.log("Data:", error.response?.data);
+
+  alert(error.response?.data?.message || "Registration failed");
+}
+
+
+};
 
 
 return(
