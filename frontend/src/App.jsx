@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-//import Login from "./pages/auth/Login";
-//import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
 
 import DashboardPage from "./pages/Dashboard/dashboardPage";
 
