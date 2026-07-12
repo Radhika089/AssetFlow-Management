@@ -9,6 +9,7 @@ import allocationRouter from "./routes/allocation.route.js";
 import maintenanceRouter from "./routes/maintenance.route.js";
 import dashboardRouter from "./routes/dashboard.route.js";
 import bookingRouter from "./routes/booking.route.js";
+import notificationRouter from "./routes/notification.route.js";
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.use("/api/allocation", allocationRouter);
 app.use("/api/maintenance", maintenanceRouter);
 app.use("/api/dashboard", dashboardRouter);
 app.use("/api/bookings", bookingRouter);
+app.use("/api/notifications", notificationRouter);
 
 export default app;
